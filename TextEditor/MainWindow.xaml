@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Text Editor" Height="600" Width="800">
     <DockPanel>
-        <Menu x:Name="menu"
-              DockPanel.Dock="Top" />
-        
+        <local:TextEditorMenu x:Name="menu"
+                              DockPanel.Dock="Top" />
+
         <local:TextEditorToolbar x:Name="toolbar"
                                  DockPanel.Dock="Top" />
 
