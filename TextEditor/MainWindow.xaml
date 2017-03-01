@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TextEditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="Text Editor" Height="600" Width="800">
+    <DockPanel>
+        <Menu x:Name="menu"
+              DockPanel.Dock="Top" />
+
+        <ToolBarTray x:Name="toolbar"
+                     DockPanel.Dock="Top" />
+
+        <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock x:Name="status" />
+        </StatusBar>
+
+        <RichTextBox x:Name="body"
+                     SpellCheck.IsEnabled="True"
+                     AcceptsReturn="True"
+                     AcceptsTab="True"
+                     BorderThickness="0 2 0 0" />
+    </DockPanel>
 </Window>
