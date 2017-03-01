@@ -10,8 +10,17 @@
         <Menu x:Name="menu"
               DockPanel.Dock="Top" />
 
-        <ToolBarTray x:Name="toolbar"
-                     DockPanel.Dock="Top" />
+        <ToolBarTray x:Name="toolbarTray"
+                     DockPanel.Dock="Top" >
+            <ToolBar>
+                <Button ToolTip="Open">
+                    <Image Source="Icons/folder_page.png" />
+                </Button>
+                <Button ToolTip="Save">
+                    <Image Source="Icons/page_save.png" />
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
 
         <StatusBar DockPanel.Dock="Bottom">
             <TextBlock x:Name="status" />
