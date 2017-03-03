@@ -23,7 +23,11 @@ namespace TextEditor
 
         public bool OpenDocument()
         {
-            OpenFileDialog dlg = new OpenFileDialog();
+            OpenFileDialog dlg = new OpenFileDialog
+            {
+                Filter = "Rich Text Document | *.rtf | Text Document | *.txt"
+            };
+            
 
             if (dlg.ShowDialog() == true)
             {
