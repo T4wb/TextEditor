@@ -68,10 +68,13 @@ namespace TextEditor
                 return true;
             }
         }
-
+        
         public bool SaveDocumentAs()
         {
-            SaveFileDialog dlg = new SaveFileDialog();
+            SaveFileDialog dlg = new SaveFileDialog
+            {
+                Filter = "Rich Text Document | *.rtf | Text Document | *.txt"
+            };
 
             if (dlg.ShowDialog() == true)
             {
