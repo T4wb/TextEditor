@@ -28,12 +28,14 @@ namespace TextEditor
 
             _documentManager = new DocumentManager(body);
 
-            if (_documentManager.OpenDocument())
-                status.Text = "Document is geladen.";
+            //if (_documentManager.OpenDocument())
+            //    status.Text = "Document is geladen.";
         }
 
         private void TextEditorToolbar_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (toolbar.IsSynchronizing) return;
+
             ComboBox source = e.OriginalSource as ComboBox;
             if (source == null) return;
 

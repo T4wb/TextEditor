@@ -25,6 +25,9 @@ namespace TextEditor
             InitializeComponent();
         }
 
+        //
+        public bool IsSynchronizing { get; private set; }
+
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             for (double i = 8; i < 48; i += 2)
@@ -35,11 +38,15 @@ namespace TextEditor
 
         public void SynchronizeWith(TextSelection selection)
         {
+            IsSynchronizing = true;
+
             Synchronize<double>(selection, TextBlock.FontSizeProperty, SetFontSize);
             Synchronize<FontWeight>(selection, TextBlock.FontWeightProperty, SetFontWeight);
             Synchronize<FontStyle>(selection, TextBlock.FontStyleProperty, SetFontStyle);
-            Synchronize<TextDecorationCollection>(selection, TextBlock.TextDecorationsProperty, SetDecorations);
+            Synchronize<TextDecorationCollection>(selection, TextBlock.TextDecorationsProperty, SetTextDecorations);
             Synchronize<FontFamily>(selection, TextBlock.FontFamilyProperty, SetFontFamily);
+
+            IsSynchronizing = false;
         }
 
         private void Synchronize<T>(TextSelection selection, DependencyProperty property, Action<T> methodToCall)
@@ -67,7 +74,7 @@ namespace TextEditor
             italicButton.IsChecked = (style == FontStyles.Italic);
         }
 
-        private void SetDecorations(TextDecorationCollection decoration)
+        private void SetTextDecorations(TextDecorationCollection decoration)
         {
             underlineButton.IsChecked = (decoration == TextDecorations.Underline);
         }
