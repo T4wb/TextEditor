@@ -32,5 +32,32 @@ namespace TextEditor
                 fontSize.Items.Add(i);
             }
         }
+
+        public void SynchronizeWith(TextSelection selection)
+        {
+
+            Synchronize<double>(selection, TextBlock.FontSizeProperty, SetFontSize);
+            Synchronize<FontWeight>(selection, TextBlock.FontWeightProperty, SetFontWeight);
+        }
+
+        private void Synchronize<T>(TextSelection selection, DependencyProperty property, Action<T> methodToCall)
+        {
+            object value = selection.GetPropertyValue(property);
+
+            if (value != DependencyProperty.UnsetValue)
+            {
+                methodToCall((T)value);
+            }
+        }
+
+        private void SetFontSize(Double size)
+        {
+            fontSize.SelectedValue = size;
+        }
+
+        private void SetFontWeight(FontWeight weight)
+        {
+            boldButton.IsChecked = (weight == FontWeights.Bold);
+        }
     }
 }

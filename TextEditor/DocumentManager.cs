@@ -28,7 +28,6 @@ namespace TextEditor
                 Filter = "Rich Text Document | *.rtf | Text Document | *.txt"
             };
             
-
             if (dlg.ShowDialog() == true)
             {
                 _currentFile = dlg.FileName;
@@ -84,6 +83,19 @@ namespace TextEditor
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// This method format the currently selected text.
+        /// </summary>
+        /// <param name="property">Dependency property</param>
+        /// <param name="value">Value for setting the property</param>
+        public void ApplyToSelection(DependencyProperty property, object value)
+        {
+            if (value != null)
+            {
+                _textBox.Selection.ApplyPropertyValue(property, value);
+            }
         }
     }
 }

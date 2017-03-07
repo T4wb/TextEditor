@@ -11,8 +11,9 @@
                               DockPanel.Dock="Top" />
 
         <local:TextEditorToolbar x:Name="toolbar"
-                                 DockPanel.Dock="Top" />
-
+                                 DockPanel.Dock="Top"
+                                 ComboBox.SelectionChanged ="TextEditorToolbar_SelectionChanged" />
+        
         <StatusBar DockPanel.Dock="Bottom">
             <TextBlock x:Name="status" />
         </StatusBar>
@@ -21,6 +22,7 @@
                      SpellCheck.IsEnabled="True"
                      AcceptsReturn="True"
                      AcceptsTab="True"
-                     BorderThickness="0 2 0 0" />
+                     BorderThickness="0 2 0 0"
+                     SelectionChanged="body_SelectionChanged"/>
     </DockPanel>
 </Window>
