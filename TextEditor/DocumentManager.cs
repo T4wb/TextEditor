@@ -97,5 +97,11 @@ namespace TextEditor
                 _textBox.Selection.ApplyPropertyValue(property, value);
             }
         }
+
+        public void NewDocument()
+        {
+            _currentFile = null;
+            _textBox.Document = new FlowDocument();
+        }
     }
 }

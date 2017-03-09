@@ -57,5 +57,11 @@ namespace TextEditor
             // update the toolbar
             toolbar.SynchronizeWith(body.Selection);
         }
+
+        private void NewDocument(object sender, ExecutedRoutedEventArgs e)
+        {
+            _documentManager.NewDocument();
+            status.Text = "New Document";
+        }
     }
 }

@@ -12,26 +12,32 @@
             </Button>
         </ToolBar>
         <ToolBar ToolBarTray.IsLocked="True">
-            <Button ToolTip="Cut">
+            <Button Command="ApplicationCommands.Cut"
+                    ToolTip="Cut">
                 <Image Source="Icons/cut.png" />
             </Button>
-            <Button ToolTip="Copy">
+            <Button Command="ApplicationCommands.Copy"
+                    ToolTip="Copy">
                 <Image Source="Icons/page_copy.png" />
             </Button>
-            <Button ToolTip="Paste">
+            <Button Command="ApplicationCommands.Paste"
+                    ToolTip="Paste">
                 <Image Source="Icons/page_paste.png" />
             </Button>
         </ToolBar>
         <ToolBar ToolBarTray.IsLocked="True">
             <ToggleButton x:Name="boldButton"
+                          Command="EditingCommands.ToggleBold"
                           ToolTip="Bold">
                 <Image Source="Icons/text_bold.png" />
             </ToggleButton>
             <ToggleButton x:Name="italicButton"
+                          Command="EditingCommands.ToggleItalic"
                           ToolTip="Italic">
                 <Image Source="Icons/text_italic.png" />
             </ToggleButton>
             <ToggleButton x:Name="underlineButton"
+                          Command="EditingCommands.ToggleUnderline"
                           ToolTip="Underline">
                 <Image Source="Icons/text_underline.png" />
             </ToggleButton>
