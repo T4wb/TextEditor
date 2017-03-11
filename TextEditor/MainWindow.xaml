@@ -9,6 +9,15 @@
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.New"
                         Executed="NewDocument" />
+        <CommandBinding Command="ApplicationCommands.Open"
+                        Executed="OpenDocument" />
+        <CommandBinding Command="ApplicationCommands.Save"
+                        CanExecute="SaveDocument_CanExecute"
+                        Executed="SaveDocument" />
+        <CommandBinding Command="ApplicationCommands.SaveAs"
+                        Executed="SaveDocumentAs" />
+        <CommandBinding Command="ApplicationCommands.Close"
+                        Executed="ApplicationClose" />
     </Window.CommandBindings>
     <DockPanel>
         <local:TextEditorMenu x:Name="menu"

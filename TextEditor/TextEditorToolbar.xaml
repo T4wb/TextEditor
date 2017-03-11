@@ -4,10 +4,12 @@
              Loaded="UserControl_Loaded">
     <ToolBarTray>
         <ToolBar ToolBarTray.IsLocked="True">
-            <Button ToolTip="Open">
+            <Button Command= "ApplicationCommands.Open"
+                    ToolTip="Open">
                 <Image Source="Icons/folder_page.png" />
             </Button>
-            <Button ToolTip="Save">
+            <Button Command="ApplicationCommands.Save"
+                ToolTip="Save">
                 <Image Source="Icons/page_save.png" />
             </Button>
         </ToolBar>

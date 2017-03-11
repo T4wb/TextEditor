@@ -103,5 +103,10 @@ namespace TextEditor
             _currentFile = null;
             _textBox.Document = new FlowDocument();
         }
+
+        public bool CanSaveDocument()
+        {
+            return !string.IsNullOrEmpty(_currentFile);
+        }
     }
 }

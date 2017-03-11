@@ -4,13 +4,13 @@
     <Menu>
         <MenuItem Header="_File">
             <MenuItem Command="ApplicationCommands.New"/>
-            <MenuItem Header="_Open" />
-            <MenuItem Header="_Save" />
-            <MenuItem Header="Save As" />
+            <MenuItem Command="ApplicationCommands.Open" />
+            <MenuItem Command="ApplicationCommands.Save" />
+            <MenuItem Command="ApplicationCommands.SaveAs" />
             <Separator />
             <MenuItem Header="_Print" />
             <Separator />
-            <MenuItem Header="Close" />
+            <MenuItem Command="ApplicationCommands.Close" />
         </MenuItem>
         <MenuItem Header="_Edit">
             <MenuItem Command="ApplicationCommands.Undo" />
