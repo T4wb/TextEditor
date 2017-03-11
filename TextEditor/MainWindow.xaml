@@ -19,6 +19,13 @@
         <CommandBinding Command="ApplicationCommands.Close"
                         Executed="ApplicationClose" />
     </Window.CommandBindings>
+    <Window.InputBindings>
+        <MouseBinding Gesture="Control+WheelClick"
+                      Command="ApplicationCommands.SaveAs" />
+        <KeyBinding Key="S"
+                    Modifiers="Shift"
+                    Command="ApplicationCommands.SaveAs" />
+    </Window.InputBindings>
     <DockPanel>
         <local:TextEditorMenu x:Name="menu"
                               DockPanel.Dock="Top" />
