@@ -8,7 +8,7 @@
             <MenuItem Command="ApplicationCommands.Save" />
             <MenuItem Command="ApplicationCommands.SaveAs" />
             <Separator />
-            <MenuItem Header="_Print" />
+            <MenuItem Command="ApplicationCommands.Print" />
             <Separator />
             <MenuItem Command="ApplicationCommands.Close" />
         </MenuItem>

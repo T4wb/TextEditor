@@ -18,6 +18,8 @@
                         Executed="SaveDocumentAs" />
         <CommandBinding Command="ApplicationCommands.Close"
                         Executed="ApplicationClose" />
+        <CommandBinding Command="ApplicationCommands.Print"
+                        Executed="PrintDocument" />
     </Window.CommandBindings>
     <DockPanel>
         <local:TextEditorMenu x:Name="menu"
